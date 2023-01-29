@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bear</title>
+    <style>
+        body {
+            margin: 0 auto;
+            background-color: #e6f9ff;
+        }
+        canvas {
+            display: block;
+            margin: 8% auto;
+            position: relative;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas" width="500" height="500">
+        Your browser can not render the code!
+    </canvas>
+    <script>
+        // 1. Draw the bear's head
+        function drawBearsHead(context){
+            context.fillStyle="brown";
+            context.beginPath();
+            context.arc(200, 130, 80, 0, Math.PI*2, false);
+            context.fill();
+            context.closePath();
+        }
+        // 2. Draw the bear's muzzle.
+        function drawBearsMuzzle(context){
+            context.fillStyle = "brown"; // Set the color to use
+            context.beginPath();           // Begin drawing the muzzle shape
+            context.arc(205, 260, 90, 0, Math.PI * 2, false); // Draw the arc shape
+            context.fill();                // Fill the shape with the specified color
+        }
+        //3. Draw the bear's eyes
+        function drawBearsEyes(context){
+            context.fillStyle="black";    
+            context.beginPath();
+            context.arc(175, 115, 8, 0, Math.PI*2, false);
+            context.fill();
+            context.arc(225, 115, 8, 0, Math.PI*2, false);
+            context.fill();
+            context.closePath();
+        }
+        //4. Draw the bear's ears
+        function drawBearsEars(context){
+            context.fillStyle="brown";
+            context.beginPath();
+            context.arc(155, 50, 25, 0, Math.PI*2, false);
+            context.fill();
+            context.arc(245, 50, 25, 0, Math.PI*2, false);
+            context.fill();
+            context.closePath();
+        }
+        //5. Draw the bear's nose
+        function drawBearsNose(context){
+            context.fillStyle="black";
+            context.beginPath();
+            context.arc(200, 130, 5, 0, Math.PI*2, false);
+            context.fill();
+            context.closePath();
+        }
+        //6. Draw the bear's mouth
+        function drawBearsMouth(context){
+            context.fillStyle="black";
+            context.beginPath();
+            context.arc(200, 150, 8, 0, Math.PI, false);
+            context.fill();
+            context.closePath();
+        }
+        //7. Draw the bear's arms
+        function drawBearsArms(context){
+            context.fillStyle="brown";
+            context.beginPath();
+            context.arc(115, 230, 25, 0, Math.PI*2, false);
+            context.fill();
+            context.arc(295, 230, 25, 0, Math.PI*2, false);
+            context.fill();
+            context.closePath();
+        }
+        //8. Draw the bear's legs
+        function drawBearsLegs(context){
+            context.fillStyle="brown";
+            context.beginPath();
+            context.arc(145, 340, 30, 0, Math.PI*2, false);
+            context.fill();
+            context.arc(275, 340, 30, 0, Math.PI*2, false);
+            context.fill();
+            context.closePath();
+        }
+        function drawBear(context){
+            drawBearsMuzzle(context);
+            drawBearsHead(context);
+            drawBearsEyes(context);
+            drawBearsEars(context);
+            drawBearsNose(context);
+            drawBearsMouth(context);
+            drawBearsArms(context);
+            drawBearsLegs(context);
+        }
+        // get the element from the DOM
+        let canvas = document.getElementById("myCanvas");
+        // set context
+        let context = canvas.getContext("2d");
+        drawBear(context);
+        //Animate the bear
+// function animate(context) {
+//   context.clearRect(0, 0, canvas.width, canvas.height);
+// //   bear.x += bear.moveX;
+// //   bear.y += bear.moveY;
+// // draw bear head
+//     context.fillStyle="brown";
+//     context.beginPath();
+//     context.arc(200, 130, 80, 0, Math.PI*2, false);
+//     context.fill();
+//     context.closePath();
+//     // 4. Draw the bear's muzzle.
+//     context.fillStyle = "brown"; // Set the color to use
+//     context.beginPath();           // Begin drawing the muzzle shape
+//     context.arc(205, 260, 90, 0, Math.PI * 2, false); // Draw the arc shape
+//     context.fill(); 
+//     // draw bear ears
+//     context.fillStyle="brown";
+//     context.beginPath();
+//     context.arc(155, 50, 25, 0, Math.PI*2, false);
+//     context.fill();
+//     context.arc(245, 50, 25, 0, Math.PI*2, false);
+//     context.fill();
+//     context.closePath();
+//   //Create the bear's eyes
+//     context.fillStyle="black";
+//     context.beginPath();
+//     context.arc(175, 115, 8, 0, Math.PI*2, false);
+//     context.fill();
+//     context.arc(225, 115, 8, 0, Math.PI*2, false);
+//     context.fill();
+//     context.closePath();
+//   //Create the bear's mouth
+//     context.fillStyle="black";
+//     context.beginPath();
+//     context.arc(200, 150, 8, 0, Math.PI, false);
+//     context.fill();
+//     context.closePath();
+// // draw bear arms
+//     context.fillStyle="brown";
+//     context.beginPath();
+//     context.arc(115, 230, 25, 0, Math.PI*2, false);
+//     context.fill();
+//     context.arc(295, 230, 25, 0, Math.PI*2, false);
+//     context.fill();
+//     context.closePath();
+//     // draw bear legs
+//     context.fillStyle="brown";
+//     context.beginPath();
+//     context.arc(145, 340, 30, 0, Math.PI*2, false);
+//     context.fill();
+//     context.arc(275, 340, 30, 0, Math.PI*2, false);
+//     context.fill();
+//     context.closePath();
+// }
+//   //Repeat
+// requestAnimationFrame(function(){animate(context)});
+
+    </script>
+</body>
+</html>

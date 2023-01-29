@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas Shapes</title>
+    <style>
+        canvas {
+            border: 1px solid gray;
+            width: 50%;
+            height: 50%;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="myCanvas">
+        Your page can not be rendered.
+    </canvas>
+    <script>
+        const canvasElement = document.getElementById("myCanvas");
+        const ctx = canvasElement.getContext("2d");
+        // draw a circle function
+        function drawCircle(ctx){
+            ctx.fillStyle = "orange";
+            ctx.beginPath();
+            ctx.arc(50, 50, 50, 0, Math.PI*2, false);
+            ctx.fill();
+            ctx.closePath();
+        }
+       
+        // draw half circle function
+        function drawHalfCircle(ctx){
+            ctx.beginPath()
+            ctx.fillStyle = "blue";
+            ctx.arc(150, 100, 30, 0, Math.PI, true);
+            ctx.fill();
+        }
+        // draw a trianle
+        function drawTriangle(ctx){
+            ctx.beginPath();
+            ctx.fillStyle = "green"
+            ctx.moveTo(50,50);
+            ctx.lineTo(100, 100);
+            ctx.lineTo(10, 100);
+            ctx.lineTo(50, 50)
+            ctx.stroke();
+            ctx.fill();
+        }
+        drawCircle(ctx);
+        drawHalfCircle(ctx);
+        drawTriangle(ctx)
+    </script>
+</body>
+</html>
